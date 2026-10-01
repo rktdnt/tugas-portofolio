@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Raya Mahardika Ibrahim — Software Engineer & Backend Developer</title>
+  <meta name="description" content="Portofolio Raya Mahardika Ibrahim - Software Engineer & Backend Developer berbasis di Jakarta, Indonesia." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="site-wrapper">
+    <!-- Navigation Bar -->
+    <header class="navbar" id="navbar">
+      <div class="nav-container">
+        <a href="#hero" class="brand">
+          <span class="brand-title">Raya Mahardika</span>
+          <span class="brand-subtitle">/ portofolio</span>
+        </a>
+        <nav class="nav-links">
+          <a href="#about" class="nav-item active">Home</a>
+          <a href="#projects" class="nav-item">Proyek</a>
+          <a href="#experience" class="nav-item">Pengalaman</a>
+          <a href="#contact" class="nav-item">Kontak</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <!-- Hero / About Section -->
+      <section class="section hero-section" id="about">
+        <div class="section-label">// tentang saya</div>
+        <h1 class="hero-title">Raya Mahardika Ibrahim</h1>
+        <p class="hero-bio">
+          Software Engineer / Backend Developer berbasis di Jakarta, Indonesia. Bersemangat membangun sistem backend yang andal, dapat diskalakan, arsitektur sistem operasi (AOSP), dan aplikasi modern yang berpusat pada pengguna.
+        </p>
+
+        <!-- Tech Stack Chips -->
+        <div class="chips-row">
+          <span class="chip chip-sky">Backend Developer</span>
+          <span class="chip chip-purple">Software Engineer</span>
+          <span class="chip chip-rose">Android &amp; AOSP</span>
+          <span class="chip chip-emerald">Next.js &amp; PostgreSQL</span>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section class="section projects-section" id="projects">
+        <div class="section-header">
+          <div class="section-label">// proyek &amp; open source</div>
+          <h2 class="section-title">Proyek Unggulan</h2>
+        </div>
+
+        <div class="projects-list">
+          <!-- Card 1: Sistem Manajemen Event HIMTI -->
+          <article class="project-card" data-accent="sky">
+            <div class="card-thumbnail thumbnail-sky">
+              <span class="emblem">SME</span>
+            </div>
+            <div class="card-content">
+              <div class="project-meta">HIMTI Universitas Paramadina &middot; Web Application</div>
+              <h3 class="project-title">
+                <a href="https://github.com/informatics-paramadina/events-himti" target="_blank" rel="noopener noreferrer">
+                  Sistem Manajemen Event HIMTI
+                  <svg class="external-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </h3>
+              <p class="project-excerpt">
+                Aplikasi berbasis web untuk mengelola event HIMTI secara terintegrasi, termasuk pendaftaran peserta online, pengelolaan jadwal agenda kegiatan, dan pelaporan hasil acara secara real-time.
+              </p>
+              <div class="project-tags">
+                <span class="tag">Next.js</span>
+                <span class="tag">Tailwind</span>
+                <span class="tag">Neon PostgreSQL</span>
+                <span class="tag">Prisma ORM</span>
+                <span class="tag">Vercel</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2: Halcyon Project -->
+          <article class="project-card" data-accent="violet">
+            <div class="card-thumbnail thumbnail-violet">
+              <span class="emblem">HP</span>
+            </div>
+            <div class="card-content">
+              <div class="project-meta">Des 2025 - Sekarang &middot; Co-lead Developer</div>
+              <h3 class="project-title">
+                <a href="https://github.com/halcyonproject" target="_blank" rel="noopener noreferrer">
+                  Halcyon Project
+                  <svg class="external-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </h3>
+              <p class="project-excerpt">
+                Custom ROM berbasis Android (AOSP) dengan arsitektur sistem inti yang optimal, desain antarmuka minimalis, performa ringan, dan sistem tinjauan kontribusi komunitas aktif.
+              </p>
+              <div class="project-tags">
+                <span class="tag">AOSP</span>
+                <span class="tag">Android</span>
+                <span class="tag">Kotlin</span>
+                <span class="tag">Java</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3: Portofolio Pribadi -->
+          <article class="project-card" data-accent="emerald">
+            <div class="card-thumbnail thumbnail-emerald">
+              <span class="emblem">RM</span>
+            </div>
+            <div class="card-content">
+              <div class="project-meta">Website Pribadi &middot; High Performance &amp; Dark Mode</div>
+              <h3 class="project-title">
+                <a href="https://rypl.my.id" target="_blank" rel="noopener noreferrer">
+                  Portofolio Pribadi (rypl.my.id)
+                  <svg class="external-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </h3>
+              <p class="project-excerpt">
+                Website portofolio minimalis berorientasi performa tinggi, animasi transisi yang mulus, responsif lintas ukuran layar, dan dukungan tema gelap obsidian yang modern.
+              </p>
+              <div class="project-tags">
+                <span class="tag">React</span>
+                <span class="tag">TypeScript</span>
+                <span class="tag">Vite</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Experience & Education Section -->
+      <section class="section timeline-section" id="experience">
+        <div class="timeline-grid">
+          <!-- Experience Column -->
+          <div class="timeline-column">
+            <div class="section-label">// riwayat kerja</div>
+            <h2 class="column-title">Pengalaman</h2>
+            <div class="timeline-items">
+              <div class="timeline-item">
+                <div class="timeline-bullet"></div>
+                <h3 class="timeline-role">Research and Technology Department</h3>
+                <div class="timeline-date">HIMTI Universitas Paramadina &middot; Feb 2026 - Sekarang</div>
+                <p class="timeline-desc">
+                  Membangun dan memelihara infrastruktur teknologi untuk mendukung kegiatan riset dan pengembangan di HIMTI, termasuk pengelolaan server, database, dan platform kolaborasi tim.
+                </p>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-bullet"></div>
+                <h3 class="timeline-role">Co-lead Developer</h3>
+                <div class="timeline-date">Halcyon Project &middot; Des 2025 - Sekarang</div>
+                <p class="timeline-desc">
+                  Mengembangkan arsitektur sistem dan source code inti, menjaga kualitas kode melalui code review kontribusi komunitas, serta mengarahkan keputusan teknis harian.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Education Column -->
+          <div class="timeline-column">
+            <div class="section-label">// akademik</div>
+            <h2 class="column-title">Pendidikan</h2>
+            <div class="timeline-items">
+              <div class="timeline-item">
+                <div class="timeline-bullet"></div>
+                <h3 class="timeline-role">Teknik Informatika</h3>
+                <div class="timeline-date">Universitas Paramadina &middot; 2025 - Sekarang</div>
+                <p class="timeline-desc">
+                  Mahasiswa aktif dengan fokus pada Rekayasa Perangkat Lunak, Basis Data Relasional, serta Arsitektur Sistem Komputer.
+                </p>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-bullet"></div>
+                <h3 class="timeline-role">Teknik Komputer dan Jaringan</h3>
+                <div class="timeline-date">SMK Budhi Warman 1 Jakarta &middot; 2022 - 2025</div>
+                <p class="timeline-desc">
+                  Aktif dalam klub Robotik dan meraih Juara Harapan 1 dalam Lomba Kompetensi Siswa (LKS) IT Network System Administration (ITNSA) Jakarta Timur.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer & Contact Section -->
+      <footer class="footer-section" id="contact">
+        <div class="divider"></div>
+        <div class="footer-content">
+          <div class="section-label">// kontak</div>
+          <h2 class="contact-heading">Tertarik berkolaborasi?</h2>
+
+          <div class="contact-links-row">
+            <a href="mailto:rayamahardikaibrahim@gmail.com" class="btn btn-primary" id="email-btn">
+              <span>Kirim Email</span>
+              <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+
+            <a href="https://github.com/rktdnt" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+              </svg>
+              <span>GitHub</span>
+            </a>
+
+            <a href="https://linkedin.com/in/raya-mahardika-57bb10326" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+              <span>LinkedIn</span>
+            </a>
+
+            <a href="https://rypl.my.id" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+              </svg>
+              <span>rypl.my.id</span>
+            </a>
+          </div>
+
+          <div class="copyright-row">
+            <div class="copyright-text">
+              &copy; <span id="current-year">2026</span> Raya Mahardika Ibrahim. All rights reserved.
+            </div>
+            <div class="tech-text">
+              Dibangun dengan HTML5, CSS3, &amp; Vanilla JS &middot; Jakarta, Indonesia
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Notification Toast for copying email -->
+  <div id="toast" class="toast">Email berhasil disalin ke clipboard!</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
