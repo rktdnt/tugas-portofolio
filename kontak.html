@@ -9,36 +9,51 @@
   <link rel="stylesheet" href="style.css" />
 
   <!-- CSS Internal (Khusus Halaman Formulir Kontak) -->
+  <!-- CSS Internal (Khusus Halaman Formulir Kontak: Apple Liquid Glass) -->
   <style>
-    /* Styling Internal: Khusus Elemen Form dan Input */
+    /* Styling Internal: Khusus Elemen Form dan Input Bergaya Apple Liquid Glass */
     .contact-layout {
       display: grid;
       grid-template-columns: 1fr 1.2fr;
-      gap: 40px;
+      gap: 36px;
       margin-top: 24px;
     }
 
-    .form-container {
-      background-color: #111215;
-      border: 1px solid #1f2228;
-      border-radius: 16px;
+    .form-container,
+    .info-card {
+      background: rgba(255, 255, 255, 0.045);
+      backdrop-filter: blur(28px) saturate(190%);
+      -webkit-backdrop-filter: blur(28px) saturate(190%);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 24px;
+      box-shadow: 0 20px 48px -12px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.22);
       padding: 32px;
     }
 
+    .info-card {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
     .contact-form fieldset {
-      border: 1px solid #27272a;
-      border-radius: 10px;
-      padding: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 18px;
+      padding: 22px;
       margin-bottom: 24px;
+      background: rgba(255, 255, 255, 0.02);
     }
 
     .contact-form legend {
-      color: #38bdf8;
+      color: #bfe3ff;
       font-size: 0.825rem;
       font-weight: 600;
-      padding: 0 8px;
+      padding: 2px 10px;
       font-family: monospace;
       letter-spacing: 0.05em;
+      background: rgba(168, 199, 250, 0.15);
+      border: 1px solid rgba(168, 199, 250, 0.3);
+      border-radius: 9999px;
     }
 
     .form-group {
@@ -51,35 +66,39 @@
     .form-label {
       font-size: 0.85rem;
       font-weight: 500;
-      color: #ffffff;
+      color: #f5f5f7;
     }
 
     .form-label .required {
-      color: #f43f5e;
+      color: #f2b8b5;
     }
 
-    /* Styling Elemen Input, Select, dan Textarea */
+    /* Styling Elemen Input, Select, dan Textarea Kaca */
     .form-input,
     .form-select,
     .form-textarea {
       width: 100%;
-      padding: 12px 14px;
-      background-color: #18181b;
-      border: 1px solid #27272a;
-      border-radius: 8px;
+      padding: 12px 16px;
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
       color: #ffffff;
       font-family: inherit;
       font-size: 0.875rem;
-      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      transition: all 0.2s ease;
       box-sizing: border-box;
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
     }
 
     .form-input:focus,
     .form-select:focus,
     .form-textarea:focus {
       outline: none;
-      border-color: #38bdf8;
-      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+      background: rgba(255, 255, 255, 0.07);
+      border-color: #a8c7fa;
+      box-shadow: 0 0 0 3px rgba(168, 199, 250, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.2);
     }
 
     .form-textarea {
@@ -101,13 +120,13 @@
       align-items: center;
       gap: 10px;
       font-size: 0.85rem;
-      color: #a1a1aa;
+      color: #d1d5db;
       cursor: pointer;
     }
 
     .choice-label input[type="radio"],
     .choice-label input[type="checkbox"] {
-      accent-color: #38bdf8;
+      accent-color: #a8c7fa;
       width: 16px;
       height: 16px;
       cursor: pointer;
@@ -131,6 +150,14 @@
   </style>
 </head>
 <body>
+  <!-- Ambient Liquid Background Layer -->
+  <div class="liquid-ambient-bg" aria-hidden="true">
+    <div class="liquid-orb orb-1"></div>
+    <div class="liquid-orb orb-2"></div>
+    <div class="liquid-orb orb-3"></div>
+    <div class="liquid-orb orb-4"></div>
+  </div>
+
   <div class="site-wrapper">
     <!-- Header & Navigasi Antar Halaman (HTML5 Semantic) -->
     <header class="navbar">

@@ -9,15 +9,19 @@
   <link rel="stylesheet" href="style.css" />
 
   <!-- CSS Internal (Khusus Halaman Proyek & Tabel) -->
+  <!-- CSS Internal (Khusus Halaman Proyek & Tabel: Apple Liquid Glass) -->
   <style>
     .table-container {
       width: 100%;
       overflow-x: auto;
       margin-top: 20px;
       margin-bottom: 40px;
-      border: 1px solid #1f2228;
-      border-radius: 12px;
-      background-color: #111215;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(28px) saturate(190%);
+      -webkit-backdrop-filter: blur(28px) saturate(190%);
+      box-shadow: 0 20px 48px -12px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.22);
     }
 
     .project-table {
@@ -28,42 +32,43 @@
     }
 
     .project-table th {
-      background-color: #18181b;
-      color: #38bdf8;
+      background: rgba(255, 255, 255, 0.06);
+      color: #bfe3ff;
       font-weight: 600;
-      padding: 14px 18px;
-      border-bottom: 2px solid #27272a;
+      padding: 16px 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      font-family: monospace;
       letter-spacing: 0.02em;
     }
 
     .project-table td {
-      padding: 14px 18px;
-      border-bottom: 1px solid #1f2228;
-      color: #a1a1aa;
+      padding: 16px 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      color: #d1d5db;
     }
 
     .project-table tbody tr:hover {
-      background-color: rgba(255, 255, 255, 0.03);
+      background-color: rgba(255, 255, 255, 0.05);
     }
 
     .status-badge {
       display: inline-block;
-      padding: 3px 8px;
-      border-radius: 4px;
+      padding: 3px 10px;
+      border-radius: 9999px;
       font-size: 0.75rem;
       font-weight: 600;
     }
 
     .status-active {
-      background-color: rgba(16, 185, 129, 0.15);
-      color: #10b981;
-      border: 1px solid #10b981;
+      background-color: rgba(180, 223, 202, 0.15);
+      color: #b4dfca;
+      border: 1px solid rgba(180, 223, 202, 0.35);
     }
 
     .status-completed {
-      background-color: rgba(56, 189, 248, 0.15);
-      color: #38bdf8;
-      border: 1px solid #38bdf8;
+      background-color: rgba(168, 199, 250, 0.15);
+      color: #a8c7fa;
+      border: 1px solid rgba(168, 199, 250, 0.35);
     }
 
     .project-showcase {
@@ -74,17 +79,36 @@
     }
 
     .showcase-card {
-      background: #111215;
-      border: 1px solid #1f2228;
-      border-radius: 14px;
-      padding: 24px;
+      background: rgba(255, 255, 255, 0.045);
+      backdrop-filter: blur(28px) saturate(190%);
+      -webkit-backdrop-filter: blur(28px) saturate(190%);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 24px;
+      box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.45), inset 0 1px 1px rgba(255, 255, 255, 0.2);
+      padding: 26px;
       display: flex;
       flex-direction: column;
       gap: 14px;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .showcase-card:hover {
+      transform: translateY(-4px);
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.28);
+      box-shadow: 0 24px 50px -12px rgba(0, 0, 0, 0.65), inset 0 1px 2px rgba(255, 255, 255, 0.35);
     }
   </style>
 </head>
 <body>
+  <!-- Ambient Liquid Background Layer -->
+  <div class="liquid-ambient-bg" aria-hidden="true">
+    <div class="liquid-orb orb-1"></div>
+    <div class="liquid-orb orb-2"></div>
+    <div class="liquid-orb orb-3"></div>
+    <div class="liquid-orb orb-4"></div>
+  </div>
+
   <div class="site-wrapper">
     <!-- Header & Navigasi Antar Halaman (HTML5 Semantic) -->
     <header class="navbar">
@@ -261,9 +285,9 @@
       </section>
 
       <!-- Section Navigasi Lanjutan -->
-      <section class="section" style="text-align: center; padding: 40px 20px; background: #111215; border-radius: 14px; border: 1px solid #1f2228;">
-        <h2 style="color: #ffffff; font-size: 1.35rem; margin-bottom: 10px;">Ingin Mendiskusikan Proyek Baru?</h2>
-        <p style="color: #a1a1aa; font-size: 0.9rem; max-width: 550px; margin: 0 auto 20px auto;">
+      <section class="section" style="text-align: center; padding: 48px 24px; background: rgba(255, 255, 255, 0.045); backdrop-filter: blur(28px) saturate(190%); -webkit-backdrop-filter: blur(28px) saturate(190%); border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.14); box-shadow: 0 20px 48px -12px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.22);">
+        <h2 style="color: #ffffff; font-size: 1.45rem; margin-bottom: 12px; font-weight: 700;">Ingin Mendiskusikan Proyek Baru?</h2>
+        <p style="color: #d1d5db; font-size: 0.925rem; max-width: 550px; margin: 0 auto 24px auto; line-height: 1.6;">
           Silakan kirimkan pesan, pertanyaan, atau tawaran kerja sama melalui formulir kontak kami.
         </p>
         <a href="kontak.html" class="btn btn-primary">
