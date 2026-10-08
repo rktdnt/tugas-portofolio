@@ -1,43 +1,48 @@
 /* ==========================================================================
    Raya Mahardika — Portfolio Stylesheet
-   Theme: Apple Liquid Glass & Android Monet Pastel (Material You / VisionOS)
+   Theme: Apple Liquid Glass & Android Monet Monochrome
    ========================================================================== */
 
 :root {
-  /* Apple Liquid Glass Canvas with Monet Dark Tones */
-  --bg-canvas: #0c0d12;
+  /* Android Monet Monochrome Palette (from user image) */
+  --palette-light: #fcfcfc;     /* Kuadran Atas: Putih Bersih */
+  --palette-silver: #ababab;    /* Kuadran Kanan Bawah: Perak Abu-Abu */
+  --palette-charcoal: #525252;  /* Kuadran Kiri Bawah: Arang Gelap */
+  --palette-dark: #191919;      /* Latar Belakang Ubin Palet */
+
+  --bg-canvas: #121212;
   --bg-glass-base: rgba(255, 255, 255, 0.045);
   --bg-glass-surface: rgba(255, 255, 255, 0.075);
   --bg-glass-elevated: rgba(255, 255, 255, 0.11);
-  --bg-glass-dock: rgba(20, 21, 29, 0.72);
-  --bg-pill: rgba(255, 255, 255, 0.09);
+  --bg-glass-dock: rgba(25, 25, 25, 0.78);
+  --bg-pill: rgba(255, 255, 255, 0.08);
 
   /* Specular Rim Light & Borders */
   --border-glass-subtle: rgba(255, 255, 255, 0.08);
-  --border-glass-rim: rgba(255, 255, 255, 0.14);
-  --border-glass-bright: rgba(255, 255, 255, 0.28);
-  --border-glass-active: rgba(168, 199, 250, 0.6);
+  --border-glass-rim: rgba(255, 255, 255, 0.16);
+  --border-glass-bright: rgba(255, 255, 255, 0.32);
+  --border-glass-active: rgba(252, 252, 252, 0.6);
 
-  /* Liquid Glass Shadows with Monet Soft Radiance */
+  /* Liquid Glass Shadows */
   --shadow-glass-sm: 0 4px 16px rgba(0, 0, 0, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.18);
   --shadow-glass-md: 0 12px 32px -6px rgba(0, 0, 0, 0.45), inset 0 1px 1px rgba(255, 255, 255, 0.22), inset 0 -1px 1px rgba(255, 255, 255, 0.04);
   --shadow-glass-lg: 0 24px 48px -12px rgba(0, 0, 0, 0.6), inset 0 1px 2px rgba(255, 255, 255, 0.28), inset 0 -1px 1px rgba(255, 255, 255, 0.05);
   --shadow-glass-hover: 0 30px 60px -15px rgba(0, 0, 0, 0.7), inset 0 1px 2px rgba(255, 255, 255, 0.4);
 
-  /* Typography Colors */
-  --text-primary: #f5f5f7;
-  --text-secondary: #c5c6d0;
-  --text-muted: #8e9099;
-  --text-dim: #5c5e66;
+  /* Typography Colors strictly from palette */
+  --text-primary: #fcfcfc;
+  --text-secondary: #ababab;
+  --text-muted: #737373;
+  --text-dim: #525252;
 
-  /* Android Monet Material You Pastel Accents */
-  --accent-blue: #a8c7fa;   /* Monet Primary Pastel Periwinkle */
-  --accent-sky: #bfe3ff;    /* Monet Pastel Ice Blue */
-  --accent-purple: #d0bcff; /* Monet Tertiary Pastel Lavender */
-  --accent-indigo: #b3c5ff; /* Monet Pastel Soft Indigo */
-  --accent-emerald: #b4dfca;/* Monet Secondary Pastel Sage / Mint */
-  --accent-rose: #f2b8b5;   /* Monet Pastel Peach / Coral */
-  --accent-amber: #fde68a;  /* Monet Pastel Butter / Honey */
+  /* Accents strictly from palette */
+  --accent-blue: #fcfcfc;
+  --accent-sky: #ababab;
+  --accent-purple: #d4d4d4;
+  --accent-indigo: #e5e5e5;
+  --accent-emerald: #ababab;
+  --accent-rose: #525252;
+  --accent-amber: #ababab;
 
   /* Typography */
   --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", "Segoe UI", Roboto, sans-serif;
@@ -84,7 +89,7 @@ body {
 }
 
 ::selection {
-  background-color: rgba(168, 199, 250, 0.45);
+  background-color: rgba(10, 132, 255, 0.4);
   color: #ffffff;
 }
 
@@ -129,7 +134,7 @@ a {
   left: 12%;
   width: 540px;
   height: 540px;
-  background: radial-gradient(circle, rgba(168, 199, 250, 0.38) 0%, rgba(168, 199, 250, 0.04) 70%, transparent 100%);
+  background: radial-gradient(circle, rgba(10, 132, 255, 0.45) 0%, rgba(10, 132, 255, 0.05) 70%, transparent 100%);
   animation-duration: 22s;
 }
 
@@ -138,7 +143,7 @@ a {
   right: 5%;
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(208, 188, 255, 0.35) 0%, rgba(226, 213, 255, 0.08) 70%, transparent 100%);
+  background: radial-gradient(circle, rgba(94, 92, 230, 0.42) 0%, rgba(191, 90, 242, 0.1) 70%, transparent 100%);
   animation-duration: 26s;
   animation-delay: -6s;
 }
@@ -148,7 +153,7 @@ a {
   left: 8%;
   width: 560px;
   height: 560px;
-  background: radial-gradient(circle, rgba(242, 184, 181, 0.25) 0%, rgba(242, 184, 181, 0.04) 70%, transparent 100%);
+  background: radial-gradient(circle, rgba(255, 55, 95, 0.28) 0%, rgba(255, 55, 95, 0.05) 70%, transparent 100%);
   animation-duration: 24s;
   animation-delay: -12s;
 }
@@ -158,7 +163,7 @@ a {
   right: 20%;
   width: 440px;
   height: 440px;
-  background: radial-gradient(circle, rgba(180, 223, 202, 0.24) 0%, rgba(191, 227, 255, 0.06) 70%, transparent 100%);
+  background: radial-gradient(circle, rgba(48, 209, 88, 0.28) 0%, rgba(100, 210, 255, 0.08) 70%, transparent 100%);
   animation-duration: 30s;
   animation-delay: -18s;
 }
@@ -675,20 +680,20 @@ a {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, rgba(168, 199, 250, 0.95) 0%, rgba(208, 188, 255, 0.95) 100%);
-  color: #0c0d12;
-  border: 1px solid rgba(255, 255, 255, 0.55);
+  background: #fcfcfc;
+  color: #191919;
+  border: 1px solid rgba(255, 255, 255, 0.6);
   box-shadow: 
     inset 0 1px 1px rgba(255, 255, 255, 0.7),
-    0 8px 24px -4px rgba(168, 199, 250, 0.45);
+    0 8px 24px -4px rgba(252, 252, 252, 0.35);
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #b9d3ff 0%, #dcc8ff 100%);
+  background: #e5e5e5;
   transform: translateY(-2px);
   box-shadow: 
     inset 0 1px 1px rgba(255, 255, 255, 0.85),
-    0 12px 30px -4px rgba(168, 199, 250, 0.6);
+    0 12px 30px -4px rgba(252, 252, 252, 0.5);
 }
 
 .btn-primary .arrow-icon {
@@ -705,7 +710,7 @@ a {
   background: rgba(255, 255, 255, 0.07);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  color: #f5f5f7;
+  color: #fcfcfc;
   border: 1px solid var(--border-glass-rim);
   box-shadow: var(--shadow-glass-sm);
 }
@@ -780,7 +785,7 @@ a {
   outline: none;
   background: rgba(255, 255, 255, 0.07);
   border-color: var(--accent-blue);
-  box-shadow: 0 0 0 3px rgba(168, 199, 250, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 0 3px rgba(10, 132, 255, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.2);
 }
 
 .form-textarea {
@@ -840,15 +845,15 @@ a {
 }
 
 .status-active {
-  background: rgba(48, 209, 88, 0.15);
-  color: var(--accent-emerald);
-  border: 1px solid rgba(48, 209, 88, 0.35);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fcfcfc;
+  border: 1px solid rgba(255, 255, 255, 0.22);
 }
 
 .status-completed {
-  background: rgba(10, 132, 255, 0.15);
-  color: var(--accent-sky);
-  border: 1px solid rgba(10, 132, 255, 0.35);
+  background: rgba(255, 255, 255, 0.08);
+  color: #ababab;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* ==========================================================================
