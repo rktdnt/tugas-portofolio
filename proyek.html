@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Raya Mahardika Ibrahim — Proyek &amp; Riwayat</title>
+  
+  <!-- CSS Eksternal -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- CSS Internal (Khusus Halaman Proyek & Tabel) -->
+  <style>
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
+      margin-top: 20px;
+      margin-bottom: 40px;
+      border: 1px solid #1f2228;
+      border-radius: 12px;
+      background-color: #111215;
+    }
+
+    .project-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.875rem;
+    }
+
+    .project-table th {
+      background-color: #18181b;
+      color: #38bdf8;
+      font-weight: 600;
+      padding: 14px 18px;
+      border-bottom: 2px solid #27272a;
+      letter-spacing: 0.02em;
+    }
+
+    .project-table td {
+      padding: 14px 18px;
+      border-bottom: 1px solid #1f2228;
+      color: #a1a1aa;
+    }
+
+    .project-table tbody tr:hover {
+      background-color: rgba(255, 255, 255, 0.03);
+    }
+
+    .status-badge {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .status-active {
+      background-color: rgba(16, 185, 129, 0.15);
+      color: #10b981;
+      border: 1px solid #10b981;
+    }
+
+    .status-completed {
+      background-color: rgba(56, 189, 248, 0.15);
+      color: #38bdf8;
+      border: 1px solid #38bdf8;
+    }
+
+    .project-showcase {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    .showcase-card {
+      background: #111215;
+      border: 1px solid #1f2228;
+      border-radius: 14px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="site-wrapper">
+    <!-- Header & Navigasi Antar Halaman (HTML5 Semantic) -->
+    <header class="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="brand">
+          <span class="brand-title">Raya Mahardika</span>
+          <span class="brand-subtitle">/ portofolio</span>
+        </a>
+        <nav class="nav-links">
+          <a href="index.html" class="nav-item">Beranda</a>
+          <a href="proyek.html" class="nav-item active">Proyek &amp; Riwayat</a>
+          <a href="kontak.html" class="nav-item">Kontak</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Konten Utama (HTML5 Semantic: <main>) -->
+    <main class="main-content">
+      <!-- Section 1: Pengantar Halaman Proyek -->
+      <section class="section">
+        <div class="section-label">// portofolio karya</div>
+        <h1 class="hero-title">Proyek &amp; Pengalaman Kerja</h1>
+        <p class="hero-bio">
+          Dokumentasi komprehensif seluruh inisiatif perangkat lunak, kontribusi proyek sumber terbuka (open source), serta riwayat rekayasa sistem yang pernah dikerjakan.
+        </p>
+      </section>
+
+      <!-- Section 2: Elemen Table (Tabel Spesifikasi Proyek) -->
+      <section class="section" id="table-section">
+        <div class="section-label">// tabel data proyek</div>
+        <h2 class="section-title">Matriks Spesifikasi Proyek</h2>
+        <p style="color: #a1a1aa; font-size: 0.875rem; margin-bottom: 12px;">
+          Tabel di bawah merangkum detail teknologi, peranan, dan status operasional dari setiap repositori:
+        </p>
+
+        <!-- Elemen Table dengan thead, tbody, th, td (HTML5 Semantic) -->
+        <div class="table-container">
+          <!-- CSS Inline Contoh 2: Min-width pada tabel untuk responsive scroll -->
+          <table class="project-table" style="min-width: 650px;">
+            <thead>
+              <tr>
+                <th style="width: 50px; text-align: center;">No</th>
+                <th>Nama Proyek</th>
+                <th>Kategori</th>
+                <th>Tech Stack</th>
+                <th>Peran</th>
+                <th>Status</th>
+                <th>Aksi / Link</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: center; font-weight: bold; color: #ffffff;">1</td>
+                <td><strong style="color: #ffffff;">Sistem Manajemen Event HIMTI</strong></td>
+                <td>Web Application</td>
+                <td>Next.js, Tailwind, Neon PostgreSQL, Prisma</td>
+                <td>Lead Fullstack</td>
+                <td><span class="status-badge status-active">Aktif</span></td>
+                <td>
+                  <a href="https://github.com/informatics-paramadina/events-himti" target="_blank" rel="noopener noreferrer" style="color: #38bdf8; text-decoration: underline;">
+                    Lihat Repo &rarr;
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center; font-weight: bold; color: #ffffff;">2</td>
+                <td><strong style="color: #ffffff;">Halcyon Project</strong></td>
+                <td>Mobile / Custom ROM</td>
+                <td>Java, Kotlin, AOSP, C/C++</td>
+                <td>Co-lead Developer</td>
+                <td><span class="status-badge status-active">Aktif</span></td>
+                <td>
+                  <a href="https://github.com/halcyonproject" target="_blank" rel="noopener noreferrer" style="color: #a78bfa; text-decoration: underline;">
+                    Lihat Repo &rarr;
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center; font-weight: bold; color: #ffffff;">3</td>
+                <td><strong style="color: #ffffff;">Portofolio Pribadi (rypl.my.id)</strong></td>
+                <td>Personal Website</td>
+                <td>React, TypeScript, Vite, CSS3</td>
+                <td>Frontend Dev</td>
+                <td><span class="status-badge status-completed">Selesai</span></td>
+                <td>
+                  <a href="https://rypl.my.id" target="_blank" rel="noopener noreferrer" style="color: #10b981; text-decoration: underline;">
+                    Kunjungi &rarr;
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center; font-weight: bold; color: #ffffff;">4</td>
+                <td><strong style="color: #ffffff;">LKS ITNSA Jakarta Timur</strong></td>
+                <td>Kompetisi Jaringan</td>
+                <td>Debian Server, Cisco IOS, BIND, BGP</td>
+                <td>Peserta / Juara 4</td>
+                <td><span class="status-badge status-completed">Tersertifikasi</span></td>
+                <td>
+                  <span style="color: #71717a;">SMK BW 1</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section 3: Detail Kartu Proyek dengan List Fitur (<ul>) -->
+      <section class="section" id="detail-proyek">
+        <div class="section-label">// rincian fitur</div>
+        <h2 class="section-title">Highlight Fitur Unggulan</h2>
+
+        <div class="project-showcase">
+          <!-- Kartu Proyek 1 -->
+          <article class="showcase-card">
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              <span class="status-badge status-active">Web Platform</span>
+              <!-- CSS Inline: Styling teks tanggal -->
+              <span style="font-size: 0.75rem; color: #71717a; font-family: monospace;">2026 - Sekarang</span>
+            </div>
+            
+            <h3 style="color: #ffffff; font-size: 1.15rem; margin: 0;">Sistem Manajemen Event HIMTI</h3>
+            <p style="color: #a1a1aa; font-size: 0.85rem; line-height: 1.6; margin: 0;">
+              Dirancang untuk mengatasi inefisiensi pencatatan manual pada kepengurusan himpunan mahasiswa.
+            </p>
+
+            <!-- Elemen List (<ul>): Fitur-fitur -->
+            <div style="margin-top: 4px;">
+              <strong style="color: #38bdf8; font-size: 0.8rem; text-transform: uppercase;">Fitur Kunci:</strong>
+              <ul style="color: #a1a1aa; font-size: 0.825rem; padding-left: 18px; margin-top: 6px; line-height: 1.6;">
+                <li>Autentikasi role-based (Admin, Panitia, dan Peserta).</li>
+                <li>Penerbitan e-tiket dengan QR Code verifikasi.</li>
+                <li>Integrasi basis data serverless Neon PostgreSQL via Prisma ORM.</li>
+              </ul>
+            </div>
+
+            <div style="margin-top: auto; padding-top: 12px;">
+              <!-- Elemen Link Bergaya Button -->
+              <a href="https://github.com/informatics-paramadina/events-himti" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="width: 100%; justify-content: center;">
+                <span>Kunjungi Repositori GitHub</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Kartu Proyek 2 -->
+          <article class="showcase-card">
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              <span class="status-badge" style="background: rgba(167, 139, 250, 0.15); color: #a78bfa; border: 1px solid #a78bfa;">AOSP Project</span>
+              <span style="font-size: 0.75rem; color: #71717a; font-family: monospace;">2025 - Sekarang</span>
+            </div>
+
+            <h3 style="color: #ffffff; font-size: 1.15rem; margin: 0;">Halcyon Project OS</h3>
+            <p style="color: #a1a1aa; font-size: 0.85rem; line-height: 1.6; margin: 0;">
+              Sistem operasi berbasis Android murni yang difokuskan pada efisiensi baterai dan kebebasan personalisasi.
+            </p>
+
+            <!-- Elemen List (<ul>): Fitur-fitur -->
+            <div style="margin-top: 4px;">
+              <strong style="color: #a78bfa; font-size: 0.8rem; text-transform: uppercase;">Fitur Kunci:</strong>
+              <ul style="color: #a1a1aa; font-size: 0.825rem; padding-left: 18px; margin-top: 6px; line-height: 1.6;">
+                <li>Kustomisasi framework dan patch performa kernel.</li>
+                <li>UI minimalis berorientasi Material You tanpa bloatware.</li>
+                <li>Dukungan continuous integration (CI) build otomatis.</li>
+              </ul>
+            </div>
+
+            <div style="margin-top: auto; padding-top: 12px;">
+              <!-- Elemen Link Bergaya Button -->
+              <a href="https://github.com/halcyonproject" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="width: 100%; justify-content: center;">
+                <span>Kunjungi Repositori GitHub</span>
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Section Navigasi Lanjutan -->
+      <section class="section" style="text-align: center; padding: 40px 20px; background: #111215; border-radius: 14px; border: 1px solid #1f2228;">
+        <h2 style="color: #ffffff; font-size: 1.35rem; margin-bottom: 10px;">Ingin Mendiskusikan Proyek Baru?</h2>
+        <p style="color: #a1a1aa; font-size: 0.9rem; max-width: 550px; margin: 0 auto 20px auto;">
+          Silakan kirimkan pesan, pertanyaan, atau tawaran kerja sama melalui formulir kontak kami.
+        </p>
+        <a href="kontak.html" class="btn btn-primary">
+          <span>Menuju Formulir Kontak &rarr;</span>
+        </a>
+      </section>
+    </main>
+
+    <!-- Footer Konsisten (HTML5 Semantic) -->
+    <footer class="footer-section">
+      <div class="divider"></div>
+      <div class="copyright-row">
+        <div class="copyright-text">
+          &copy; 2026 Raya Mahardika Ibrahim. All rights reserved.
+        </div>
+        <div class="tech-text">
+          Halaman: <strong>Proyek &amp; Riwayat</strong> &bull; Navigasi: <a href="index.html" style="color: #38bdf8;">Beranda</a> | <a href="kontak.html" style="color: #38bdf8;">Kontak</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

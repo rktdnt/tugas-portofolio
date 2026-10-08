@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Raya Mahardika Ibrahim — Kontak &amp; Formulir</title>
+  
+  <!-- CSS Eksternal -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- CSS Internal (Khusus Halaman Formulir Kontak) -->
+  <style>
+    /* Styling Internal: Khusus Elemen Form dan Input */
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 40px;
+      margin-top: 24px;
+    }
+
+    .form-container {
+      background-color: #111215;
+      border: 1px solid #1f2228;
+      border-radius: 16px;
+      padding: 32px;
+    }
+
+    .contact-form fieldset {
+      border: 1px solid #27272a;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 24px;
+    }
+
+    .contact-form legend {
+      color: #38bdf8;
+      font-size: 0.825rem;
+      font-weight: 600;
+      padding: 0 8px;
+      font-family: monospace;
+      letter-spacing: 0.05em;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 18px;
+    }
+
+    .form-label {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #ffffff;
+    }
+
+    .form-label .required {
+      color: #f43f5e;
+    }
+
+    /* Styling Elemen Input, Select, dan Textarea */
+    .form-input,
+    .form-select,
+    .form-textarea {
+      width: 100%;
+      padding: 12px 14px;
+      background-color: #18181b;
+      border: 1px solid #27272a;
+      border-radius: 8px;
+      color: #ffffff;
+      font-family: inherit;
+      font-size: 0.875rem;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      box-sizing: border-box;
+    }
+
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      outline: none;
+      border-color: #38bdf8;
+      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    /* Radio dan Checkbox Grouping */
+    .radio-group,
+    .checkbox-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .choice-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.85rem;
+      color: #a1a1aa;
+      cursor: pointer;
+    }
+
+    .choice-label input[type="radio"],
+    .choice-label input[type="checkbox"] {
+      accent-color: #38bdf8;
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+    }
+
+    .info-card {
+      background: #111215;
+      border: 1px solid #1f2228;
+      border-radius: 16px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    @media (max-width: 860px) {
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-wrapper">
+    <!-- Header & Navigasi Antar Halaman (HTML5 Semantic) -->
+    <header class="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="brand">
+          <span class="brand-title">Raya Mahardika</span>
+          <span class="brand-subtitle">/ portofolio</span>
+        </a>
+        <nav class="nav-links">
+          <a href="index.html" class="nav-item">Beranda</a>
+          <a href="proyek.html" class="nav-item">Proyek &amp; Riwayat</a>
+          <a href="kontak.html" class="nav-item active">Kontak</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Konten Utama (HTML5 Semantic: <main>) -->
+    <main class="main-content">
+      <!-- Section Pengantar -->
+      <section class="section">
+        <div class="section-label">// komunikasi langsung</div>
+        <h1 class="hero-title">Hubungi Saya</h1>
+        <p class="hero-bio">
+          Punya ide proyek, tawaran kerja sama backend/AOSP, atau sekadar ingin menyapa? Silakan lengkapi formulir di bawah ini atau hubungi saluran resmi yang tersedia.
+        </p>
+      </section>
+
+      <!-- Layout 2 Kolom: Info Kontak & Formulir Lengkap -->
+      <section class="contact-layout">
+        <!-- Kolom Kiri: Informasi Kontak & Image (HTML5 <aside>) -->
+        <aside class="info-card">
+          <div>
+            <div class="section-label">// saluran resmi</div>
+            <h2 style="color: #ffffff; font-size: 1.25rem; margin-bottom: 8px;">Informasi Kontak</h2>
+            <p style="color: #a1a1aa; font-size: 0.875rem;">
+              Respons aktif biasanya diberikan dalam waktu 1x24 jam kerja.
+            </p>
+          </div>
+
+          <!-- Elemen Image Avatar Miniatura -->
+          <div style="display: flex; align-items: center; gap: 16px; padding: 16px; background: #18181b; border-radius: 10px; border: 1px solid #27272a;">
+            <img 
+              src="avatar.png" 
+              alt="Avatar Raya" 
+              width="60" 
+              height="60" 
+              style="border-radius: 50%; border: 2px solid #38bdf8;"
+            />
+            <div>
+              <strong style="color: #ffffff; font-size: 0.95rem; display: block;">Raya Mahardika Ibrahim</strong>
+              <span style="color: #38bdf8; font-size: 0.775rem;">Jakarta, DKI Jakarta, ID</span>
+            </div>
+          </div>
+
+          <!-- Elemen List: Kontak Cepat (<ul>) & Link (<a>) -->
+          <div>
+            <h3 style="color: #ffffff; font-size: 0.9rem; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em;">Detail Saluran:</h3>
+            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 14px; font-size: 0.875rem;">
+              <li style="display: flex; gap: 10px;">
+                <span style="color: #71717a; width: 80px;">Email:</span>
+                <a href="mailto:rayamahardikaibrahim@gmail.com" style="color: #38bdf8; text-decoration: underline;">
+                  rayamahardikaibrahim@gmail.com
+                </a>
+              </li>
+              <li style="display: flex; gap: 10px;">
+                <span style="color: #71717a; width: 80px;">GitHub:</span>
+                <a href="https://github.com/rktdnt" target="_blank" rel="noopener noreferrer" style="color: #ffffff; text-decoration: underline;">
+                  github.com/rktdnt
+                </a>
+              </li>
+              <li style="display: flex; gap: 10px;">
+                <span style="color: #71717a; width: 80px;">LinkedIn:</span>
+                <a href="https://linkedin.com/in/raya-mahardika-57bb10326" target="_blank" rel="noopener noreferrer" style="color: #a78bfa; text-decoration: underline;">
+                  in/raya-mahardika-57bb10326
+                </a>
+              </li>
+              <li style="display: flex; gap: 10px;">
+                <span style="color: #71717a; width: 80px;">Situs:</span>
+                <a href="https://rypl.my.id" target="_blank" rel="noopener noreferrer" style="color: #10b981; text-decoration: underline;">
+                  https://rypl.my.id
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- CSS Inline Contoh 4: Box catatan ketersediaan -->
+          <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.3); padding: 14px; border-radius: 8px;">
+            <span style="color: #10b981; font-size: 0.8rem; font-weight: 600; display: block; margin-bottom: 4px;">
+              ● Status Kerja:
+            </span>
+            <p style="color: #a1a1aa; font-size: 0.8rem; margin: 0;">
+              Terbuka untuk proyek paruh waktu (Freelance), riset kolaboratif, serta magang di bidang Backend Engineering.
+            </p>
+          </div>
+        </aside>
+
+        <!-- Kolom Kanan: Elemen Form Lengkap dengan Input dan Button -->
+        <article class="form-container">
+          <div class="section-label">// kirim pesan langsung</div>
+          <h2 style="color: #ffffff; font-size: 1.35rem; margin-bottom: 20px;">Formulir Pesan</h2>
+
+          <!-- Elemen Form (HTML5 Semantic: <form>) -->
+          <form class="contact-form" id="contact-form" onsubmit="handleFormSubmit(event)">
+            <!-- Fieldset 1: Data Pengirim -->
+            <fieldset>
+              <legend>1. IDENTITAS PENGIRIM</legend>
+
+              <div class="form-group">
+                <label for="nama" class="form-label">
+                  Nama Lengkap <span class="required">*</span>
+                </label>
+                <!-- Elemen Input (type="text") -->
+                <input 
+                  type="text" 
+                  id="nama" 
+                  name="nama" 
+                  class="form-input" 
+                  placeholder="Contoh: Budi Pratama" 
+                  required 
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="form-label">
+                  Alamat Email <span class="required">*</span>
+                </label>
+                <!-- Elemen Input (type="email") -->
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email" 
+                  class="form-input" 
+                  placeholder="Contoh: nama@domain.com" 
+                  required 
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="telepon" class="form-label">
+                  Nomor WhatsApp / Telepon (Opsional)
+                </label>
+                <!-- Elemen Input (type="tel") -->
+                <input 
+                  type="tel" 
+                  id="telepon" 
+                  name="telepon" 
+                  class="form-input" 
+                  placeholder="+62 812-xxxx-xxxx" 
+                />
+              </div>
+            </fieldset>
+
+            <!-- Fieldset 2: Keperluan & Detail Pesan -->
+            <fieldset>
+              <legend>2. KEPERLUAN &amp; PESAN</legend>
+
+              <!-- Elemen Input Radio Group (type="radio") -->
+              <div class="form-group">
+                <span class="form-label">Kategori Keperluan <span class="required">*</span></span>
+                <div class="radio-group">
+                  <label class="choice-label">
+                    <input type="radio" name="kategori" value="proyek" checked />
+                    <span>Kolaborasi Proyek Baru</span>
+                  </label>
+                  <label class="choice-label">
+                    <input type="radio" name="kategori" value="karir" />
+                    <span>Tawaran Pekerjaan / Internship</span>
+                  </label>
+                  <label class="choice-label">
+                    <input type="radio" name="kategori" value="diskusi" />
+                    <span>Diskusi Teknis &amp; Pertanyaan Umum</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Elemen Select Dropdown -->
+              <div class="form-group">
+                <label for="layanan" class="form-label">Bidang Terkait</label>
+                <select id="layanan" name="layanan" class="form-select">
+                  <option value="backend">Backend &amp; API Development</option>
+                  <option value="database">Database Architecture &amp; Optimization</option>
+                  <option value="aosp">Android / AOSP Custom ROM</option>
+                  <option value="web">Fullstack Web App (Next.js / React)</option>
+                  <option value="lainnya">Lainnya</option>
+                </select>
+              </div>
+
+              <!-- Elemen Textarea -->
+              <div class="form-group">
+                <label for="pesan" class="form-label">
+                  Isi Pesan <span class="required">*</span>
+                </label>
+                <textarea 
+                  id="pesan" 
+                  name="pesan" 
+                  class="form-textarea" 
+                  placeholder="Tuliskan gambaran proyek atau pertanyaan Anda di sini..." 
+                  required
+                ></textarea>
+              </div>
+
+              <!-- Elemen Input Checkbox (type="checkbox") -->
+              <div class="form-group" style="margin-top: 10px;">
+                <label class="choice-label">
+                  <input type="checkbox" name="persetujuan" required checked />
+                  <span style="font-size: 0.8rem;">Saya menyetujui data formulir ini digunakan untuk keperluan komunikasi balasan.</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <!-- Aksi Tombol (Elemen Button & Input Submit/Reset) -->
+            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+              <!-- Elemen Button (type="submit") -->
+              <button type="submit" class="btn btn-primary" style="flex: 1; justify-content: center;">
+                <span>Kirim Pesan Sekarang</span>
+                <span style="font-weight: bold;">&rarr;</span>
+              </button>
+
+              <!-- Elemen Button (type="reset") -->
+              <button type="reset" class="btn btn-secondary">
+                <span>Reset Isian</span>
+              </button>
+            </div>
+          </form>
+        </article>
+      </section>
+    </main>
+
+    <!-- Footer Konsisten (HTML5 Semantic) -->
+    <footer class="footer-section">
+      <div class="divider"></div>
+      <div class="copyright-row">
+        <div class="copyright-text">
+          &copy; <span id="current-year">2026</span> Raya Mahardika Ibrahim. All rights reserved.
+        </div>
+        <div class="tech-text">
+          Halaman: <strong>Kontak</strong> &bull; Navigasi: <a href="index.html" style="color: #38bdf8;">Beranda</a> | <a href="proyek.html" style="color: #38bdf8;">Proyek</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    // Handler sederhana pengiriman form untuk memberikan feedback interaktif
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      const nama = document.getElementById('nama').value;
+      alert('Terima kasih, ' + nama + '! Pesan Anda telah diterima (simulasi formulir). Kami akan segera membalas ke email Anda.');
+      document.getElementById('contact-form').reset();
+    }
+  </script>
+</body>
+</html>
