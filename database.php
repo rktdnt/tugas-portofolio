@@ -4,10 +4,39 @@
  * Portofolio Raya Mahardika Ibrahim
  */
 
-// Ganti nilai konstanta di bawah dengan URL & Anon Key dari Dashboard Supabase Anda:
-// (Buka Project Settings -> API di https://supabase.com)
-define('SUPABASE_URL', getenv('SUPABASE_URL') ?: 'https://YOUR_PROJECT_REF.supabase.co');
-define('SUPABASE_KEY', getenv('SUPABASE_KEY') ?: 'YOUR_SUPABASE_ANON_KEY');
+/**
+ * Parser sederhana untuk membaca berkas .env tanpa dependensi pihak ketiga.
+ */
+function loadEnv(string $filePath): void {
+    if (!file_exists($filePath)) {
+        return;
+    }
+    $lines = file($filePath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    foreach ($lines as $line) {
+        $line = trim($line);
+        if ($line === '' || $line[0] === '#') {
+            continue;
+        }
+        if (strpos($line, '=') !== false) {
+            [$key, $value] = explode('=', $line, 2);
+            $key = trim($key);
+            $value = trim($value);
+            // Bersihkan kutip pembungkus
+            $value = trim($value, "\"'");
+            if (!getenv($key)) {
+                putenv("{$key}={$value}");
+                $_ENV[$key] = $value;
+                $_SERVER[$key] = $value;
+            }
+        }
+    }
+}
+
+// Muat otomatis berkas .env jika tersedia
+loadEnv(__DIR__ . '/.env');
+
+define('SUPABASE_URL', getenv('SUPABASE_URL') ?: ($_ENV['SUPABASE_URL'] ?? ''));
+define('SUPABASE_KEY', getenv('SUPABASE_KEY') ?: ($_ENV['SUPABASE_KEY'] ?? ''));
 define('SUPABASE_TABLE', 'pesan_kontak');
 
 /**
@@ -34,15 +63,16 @@ function simpanPesanKontak(array $input): array {
         return ['success' => false, 'message' => 'Nama tidak boleh melebihi 100 karakter.'];
     }
 
-    // 2. Cek apakah kredensial Supabase sudah dikonfigurasi
+    // 2. Cek apakah berkas .env sudah dikonfigurasi
     if (
+        empty(SUPABASE_URL) || 
+        empty(SUPABASE_KEY) || 
         strpos(SUPABASE_URL, 'YOUR_PROJECT_REF') !== false ||
-        strpos(SUPABASE_KEY, 'YOUR_SUPABASE_ANON_KEY') !== false ||
-        empty(SUPABASE_URL) || empty(SUPABASE_KEY)
+        strpos(SUPABASE_KEY, 'YOUR_SUPABASE_ANON_KEY') !== false
     ) {
         return [
             'success' => false,
-            'message' => 'Kredensial Supabase belum diatur. Silakan isi SUPABASE_URL dan SUPABASE_KEY pada berkas database.php.'
+            'message' => 'File .env belum ditemukan atau belum diisi. Buat file .env dari .env.example lalu masukkan SUPABASE_URL dan SUPABASE_KEY Anda.'
         ];
     }
 
