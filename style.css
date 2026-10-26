@@ -184,56 +184,6 @@ a {
 }
 
 /* ==========================================================================
-   Apple Liquid Glass Components & Utilities
-   ========================================================================== */
-.glass-panel,
-.glass-card {
-  background: var(--bg-glass-base);
-  backdrop-filter: blur(28px) saturate(190%);
-  -webkit-backdrop-filter: blur(28px) saturate(190%);
-  border: 1px solid var(--border-glass-rim);
-  box-shadow: var(--shadow-glass-md);
-  border-radius: var(--radius-lg);
-  transition: all var(--transition-normal);
-  position: relative;
-  overflow: hidden;
-}
-
-.glass-panel::before,
-.glass-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%);
-  pointer-events: none;
-}
-
-.glass-card:hover {
-  background: var(--bg-glass-surface);
-  border-color: var(--border-glass-bright);
-  box-shadow: var(--shadow-glass-hover);
-  transform: translateY(-3px);
-}
-
-.glass-pill {
-  background: var(--bg-glass-surface);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border: 1px solid var(--border-glass-rim);
-  border-radius: var(--radius-full);
-  box-shadow: var(--shadow-glass-sm);
-  transition: all var(--transition-fast);
-}
-
-.glass-pill:hover {
-  background: var(--bg-glass-elevated);
-  border-color: var(--border-glass-bright);
-}
-
-/* ==========================================================================
    Layout Wrapper
    ========================================================================== */
 .site-wrapper {
@@ -356,10 +306,6 @@ a {
 /* ==========================================================================
    Hero / Beranda
    ========================================================================== */
-.hero-section {
-  padding-top: 16px;
-}
-
 .hero-title {
   font-size: clamp(2.2rem, 5.5vw, 3.4rem);
   font-weight: 800;
@@ -370,14 +316,6 @@ a {
   text-shadow: 0 0 30px rgba(255, 255, 255, 0.12);
 }
 
-.hero-role {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--accent-blue);
-  font-family: var(--font-mono);
-  margin-bottom: 18px;
-}
-
 .hero-bio {
   font-size: 1.05rem;
   color: var(--text-secondary);
@@ -386,47 +324,9 @@ a {
   margin-bottom: 28px;
 }
 
-.chips-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.chip {
-  display: inline-flex;
-  align-items: center;
-  padding: 6px 14px;
-  border-radius: var(--radius-full);
-  background: var(--bg-glass-base);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--border-glass-rim);
-  font-size: 0.8rem;
-  font-weight: 500;
-  box-shadow: var(--shadow-glass-sm);
-  transition: all var(--transition-fast);
-}
-
-.chip:hover {
-  transform: translateY(-2px);
-  background: var(--bg-glass-surface);
-  border-color: var(--border-glass-bright);
-}
-
-.chip-sky { color: var(--accent-sky); }
-.chip-purple { color: var(--accent-purple); }
-.chip-rose { color: var(--accent-rose); }
-.chip-emerald { color: var(--accent-emerald); }
-
 /* ==========================================================================
    Project Cards (Apple Liquid Glass Grid)
    ========================================================================== */
-.section-header {
-  margin-bottom: 28px;
-  border-bottom: 1px solid var(--border-glass-rim);
-  padding-bottom: 16px;
-}
-
 .section-title {
   font-size: 1.85rem;
   font-weight: 700;
@@ -434,232 +334,6 @@ a {
   color: #ffffff;
 }
 
-.projects-list {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.project-card {
-  display: flex;
-  align-items: center;
-  gap: 28px;
-  padding: 26px;
-  background: var(--bg-glass-base);
-  backdrop-filter: blur(28px) saturate(190%);
-  -webkit-backdrop-filter: blur(28px) saturate(190%);
-  border: 1px solid var(--border-glass-rim);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-glass-md);
-  transition: all var(--transition-normal);
-  position: relative;
-  overflow: hidden;
-}
-
-.project-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
-}
-
-.project-card:hover {
-  transform: translateY(-4px);
-  background: var(--bg-glass-surface);
-  border-color: var(--border-glass-bright);
-  box-shadow: var(--shadow-glass-hover);
-}
-
-/* Card Thumbnails with Liquid Emblems */
-.card-thumbnail {
-  flex-shrink: 0;
-  width: 240px;
-  height: 155px;
-  border-radius: var(--radius-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform var(--transition-normal);
-  position: relative;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2);
-}
-
-.project-card:hover .card-thumbnail {
-  transform: scale(1.03);
-}
-
-.thumbnail-sky {
-  background: radial-gradient(circle at 40% 40%, rgba(10, 132, 255, 0.35) 0%, rgba(6, 15, 30, 0.9) 100%);
-}
-.thumbnail-sky .emblem {
-  color: var(--accent-sky);
-  text-shadow: 0 0 24px rgba(100, 210, 255, 0.6);
-}
-
-.thumbnail-violet {
-  background: radial-gradient(circle at 40% 40%, rgba(191, 90, 242, 0.35) 0%, rgba(25, 8, 38, 0.9) 100%);
-}
-.thumbnail-violet .emblem {
-  color: var(--accent-purple);
-  text-shadow: 0 0 24px rgba(191, 90, 242, 0.6);
-}
-
-.thumbnail-emerald {
-  background: radial-gradient(circle at 40% 40%, rgba(48, 209, 88, 0.35) 0%, rgba(6, 30, 18, 0.9) 100%);
-}
-.thumbnail-emerald .emblem {
-  color: var(--accent-emerald);
-  text-shadow: 0 0 24px rgba(48, 209, 88, 0.6);
-}
-
-.emblem {
-  font-size: 2.4rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  user-select: none;
-  font-family: var(--font-mono);
-}
-
-.card-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.project-meta {
-  font-size: 0.775rem;
-  font-weight: 600;
-  font-family: var(--font-mono);
-  letter-spacing: 0.02em;
-}
-
-.project-card[data-accent="sky"] .project-meta { color: var(--accent-sky); }
-.project-card[data-accent="violet"] .project-meta { color: var(--accent-purple); }
-.project-card[data-accent="emerald"] .project-meta { color: var(--accent-emerald); }
-
-.project-title {
-  font-size: 1.3rem;
-  font-weight: 700;
-  letter-spacing: -0.015em;
-  color: #ffffff;
-}
-
-.project-title a {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.project-title a:hover {
-  color: var(--accent-blue);
-}
-
-.project-excerpt {
-  font-size: 0.885rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
-}
-
-.project-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 6px;
-}
-
-.tag {
-  font-size: 0.725rem;
-  font-weight: 500;
-  color: #d1d5db;
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(8px);
-  border: 1px solid var(--border-glass-rim);
-  padding: 3px 10px;
-  border-radius: var(--radius-full);
-}
-
-/* ==========================================================================
-   Timeline / Riwayat & Edukasi
-   ========================================================================== */
-.timeline-section {
-  padding-top: 8px;
-}
-
-.timeline-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
-}
-
-.timeline-card {
-  padding: 28px;
-  background: var(--bg-glass-base);
-  backdrop-filter: blur(28px) saturate(190%);
-  -webkit-backdrop-filter: blur(28px) saturate(190%);
-  border: 1px solid var(--border-glass-rim);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-glass-md);
-}
-
-.column-title {
-  font-size: 1.45rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: #ffffff;
-  margin-bottom: 24px;
-}
-
-.timeline-items {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  position: relative;
-  padding-left: 20px;
-  border-left: 1px solid var(--border-glass-rim);
-}
-
-.timeline-item {
-  position: relative;
-}
-
-.timeline-bullet {
-  position: absolute;
-  left: -25px;
-  top: 6px;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: var(--accent-blue);
-  box-shadow: 0 0 14px var(--accent-blue);
-  border: 2px solid rgba(255, 255, 255, 0.6);
-}
-
-.timeline-role {
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: #ffffff;
-  margin-bottom: 4px;
-}
-
-.timeline-date {
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: var(--accent-blue);
-  font-family: var(--font-mono);
-  margin-bottom: 8px;
-}
-
-.timeline-desc {
-  font-size: 0.875rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
-}
 
 /* ==========================================================================
    Buttons (Apple Vision Liquid Glass Buttons)
@@ -696,16 +370,6 @@ a {
     0 12px 30px -4px rgba(252, 252, 252, 0.5);
 }
 
-.btn-primary .arrow-icon {
-  width: 16px;
-  height: 16px;
-  transition: transform var(--transition-fast);
-}
-
-.btn-primary:hover .arrow-icon {
-  transform: translateX(4px);
-}
-
 .btn-secondary {
   background: rgba(255, 255, 255, 0.07);
   backdrop-filter: blur(20px);
@@ -721,11 +385,6 @@ a {
   color: #ffffff;
   transform: translateY(-2px);
   box-shadow: var(--shadow-glass-md);
-}
-
-.btn-icon {
-  width: 17px;
-  height: 17px;
 }
 
 /* ==========================================================================
@@ -873,25 +532,6 @@ a {
   background-color: var(--border-glass-rim);
 }
 
-.footer-content {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.contact-heading {
-  font-size: 1.35rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: #ffffff;
-}
-
-.contact-links-row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 12px;
-}
 
 .copyright-row {
   display: flex;
@@ -914,24 +554,6 @@ a {
 /* ==========================================================================
    Responsive Breakpoints
    ========================================================================== */
-@media (max-width: 860px) {
-  .project-card {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 18px;
-  }
-
-  .card-thumbnail {
-    width: 100%;
-    height: 180px;
-  }
-
-  .timeline-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-}
-
 @media (max-width: 600px) {
   .site-wrapper {
     padding: 0 16px;

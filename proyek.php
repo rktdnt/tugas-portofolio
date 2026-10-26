@@ -145,7 +145,7 @@
 
         <!-- Elemen Table dengan thead, tbody, th, td (HTML5 Semantic) -->
         <div class="table-container">
-          <!-- CSS Inline Contoh 2: Min-width pada tabel untuk responsive scroll -->
+          <!-- Tabel Spesifikasi Proyek -->
           <table class="project-table" style="min-width: 650px;">
             <thead>
               <tr>

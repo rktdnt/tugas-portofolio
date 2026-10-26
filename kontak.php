@@ -239,7 +239,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </ul>
           </div>
 
-          <!-- CSS Inline Contoh 4: Box catatan ketersediaan -->
+          <!-- Box Catatan Ketersediaan -->
           <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.15); padding: 14px; border-radius: 12px;">
             <span style="color: #fcfcfc; font-size: 0.8rem; font-weight: 600; display: block; margin-bottom: 4px;">
               ● Status Kerja:
