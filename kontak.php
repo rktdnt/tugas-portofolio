@@ -1,3 +1,10 @@
+<?php
+require_once __DIR__ . '/database.php';
+$feedback = null;
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $feedback = simpanPesanKontak($_POST);
+}
+?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -248,8 +255,14 @@
           <div class="section-label">// kirim pesan langsung</div>
           <h2 style="color: #ffffff; font-size: 1.35rem; margin-bottom: 20px;">Formulir Pesan</h2>
 
+          <?php if ($feedback): ?>
+            <div style="padding: 14px 18px; border-radius: 14px; margin-bottom: 20px; font-size: 0.875rem; line-height: 1.5; <?= $feedback['success'] ? 'background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.28); color: #fcfcfc;' : 'background: rgba(239, 68, 68, 0.12); border: 1px solid rgba(239, 68, 68, 0.35); color: #fca5a5;' ?>">
+              <strong><?= $feedback['success'] ? '✓ Berhasil:' : '⚠ Perhatian:' ?></strong> <?= htmlspecialchars($feedback['message']) ?>
+            </div>
+          <?php endif; ?>
+
           <!-- Elemen Form (HTML5 Semantic: <form>) -->
-          <form class="contact-form" id="contact-form" onsubmit="handleFormSubmit(event)">
+          <form class="contact-form" id="contact-form" action="kontak.php" method="POST">
             <!-- Fieldset 1: Data Pengirim -->
             <fieldset>
               <legend>1. IDENTITAS PENGIRIM</legend>
@@ -389,14 +402,5 @@
     </footer>
   </div>
 
-  <script>
-    // Handler sederhana pengiriman form untuk memberikan feedback interaktif
-    function handleFormSubmit(event) {
-      event.preventDefault();
-      const nama = document.getElementById('nama').value;
-      alert('Terima kasih, ' + nama + '! Pesan Anda telah diterima (simulasi formulir). Kami akan segera membalas ke email Anda.');
-      document.getElementById('contact-form').reset();
-    }
-  </script>
 </body>
 </html>

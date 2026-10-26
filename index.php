@@ -1,3 +1,10 @@
+<?php
+require_once __DIR__ . '/database.php';
+$feedback = null;
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action_contact'])) {
+    $feedback = simpanPesanKontak($_POST);
+}
+?>
 <!DOCTYPE html>
 <html lang="id" class="scroll-smooth">
 <head>
@@ -644,7 +651,14 @@
 
         <!-- Kolom Kanan: Formulir HTML5 Lengkap (7 Kolom) -->
         <div class="lg:col-span-7 p-6 sm:p-8 bg-apple-glassBase backdrop-blur-2xl border border-apple-borderRim rounded-3xl shadow-glass-md apple-glass-rim">
-          <form action="#" method="post" class="space-y-6">
+          <?php if ($feedback): ?>
+            <div class="mb-6 p-4 rounded-2xl text-xs sm:text-sm leading-relaxed <?= $feedback['success'] ? 'bg-white/[0.08] border border-white/25 text-palette-light' : 'bg-red-500/10 border border-red-500/30 text-red-200' ?>">
+              <strong><?= $feedback['success'] ? '✓ Berhasil:' : '⚠ Perhatian:' ?></strong> <?= htmlspecialchars($feedback['message']) ?>
+            </div>
+          <?php endif; ?>
+
+          <form action="#kontak" method="post" class="space-y-6">
+            <input type="hidden" name="action_contact" value="1" />
             
             <!-- Fieldset 1: Identitas Pengirim -->
             <fieldset class="border border-white/[0.12] bg-white/[0.02] rounded-2xl p-4 sm:p-6 space-y-4">
