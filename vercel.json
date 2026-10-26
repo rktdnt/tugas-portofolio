@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "functions": {
+    "api/*.php": {
+      "runtime": "vercel-php@0.9.0"
+    }
+  },
+  "routes": [
+    { "src": "/style.css", "dest": "/style.css" },
+    { "src": "/avatar.png", "dest": "/avatar.png" },
+    { "src": "/kontak(\\.php)?", "dest": "/api/kontak.php" },
+    { "src": "/proyek(\\.php)?", "dest": "/api/proyek.php" },
+    { "src": "/(index(\\.php)?)?", "dest": "/api/index.php" }
+  ]
+}

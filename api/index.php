@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action_contact'])) {
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 
   <!-- CSS Eksternal: Shared Apple Liquid Glass Stylesheet -->
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="/style.css" />
 
   <!-- Framework Tailwind CSS via Official CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -257,7 +257,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action_contact'])) {
         <!-- Figure Foto Profil -->
         <figure class="flex-shrink-0 text-center">
           <img 
-            src="avatar.png" 
+            src="/avatar.png" 
             alt="Foto Profil Raya Mahardika Ibrahim" 
             class="w-32 h-32 sm:w-36 sm:h-36 rounded-full object-cover border-4 border-white/30 shadow-[0_0_28px_rgba(252,252,252,0.25),0_12px_24px_rgba(0,0,0,0.4)] mx-auto"
             width="144"

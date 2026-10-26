@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <title>Raya Mahardika Ibrahim — Kontak &amp; Formulir</title>
   
   <!-- CSS Eksternal -->
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="/style.css" />
 
   <!-- CSS Internal (Khusus Halaman Formulir Kontak: Apple Liquid Glass) -->
   <style>
@@ -158,14 +158,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <!-- Header & Navigasi Antar Halaman (HTML5 Semantic) -->
     <header class="navbar">
       <div class="nav-container">
-        <a href="index.php" class="brand">
+        <a href="/" class="brand">
           <span class="brand-title">Raya Mahardika</span>
           <span class="brand-subtitle">/ portofolio</span>
         </a>
         <nav class="nav-links">
-          <a href="index.php" class="nav-item">Beranda</a>
-          <a href="proyek.php" class="nav-item">Proyek &amp; Riwayat</a>
-          <a href="kontak.php" class="nav-item active">Kontak</a>
+          <a href="/" class="nav-item">Beranda</a>
+          <a href="/proyek" class="nav-item">Proyek &amp; Riwayat</a>
+          <a href="/kontak" class="nav-item active">Kontak</a>
         </nav>
       </div>
     </header>
@@ -196,7 +196,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           <!-- Elemen Image Avatar Miniatura -->
           <div style="display: flex; align-items: center; gap: 16px; padding: 16px; background: rgba(255, 255, 255, 0.03); border-radius: 14px; border: 1px solid rgba(255, 255, 255, 0.1);">
             <img 
-              src="avatar.png" 
+              src="/avatar.png" 
               alt="Avatar Raya" 
               width="60" 
               height="60" 
@@ -262,7 +262,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           <?php endif; ?>
 
           <!-- Elemen Form (HTML5 Semantic: <form>) -->
-          <form class="contact-form" id="contact-form" action="kontak.php" method="POST">
+          <form class="contact-form" id="contact-form" action="/kontak" method="POST">
             <!-- Fieldset 1: Data Pengirim -->
             <fieldset>
               <legend>1. IDENTITAS PENGIRIM</legend>
@@ -396,7 +396,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           &copy; <?= date('Y') ?> Raya Mahardika Ibrahim. All rights reserved.
         </div>
         <div class="tech-text">
-          Halaman: <strong>Kontak</strong> &bull; Navigasi: <a href="index.php" style="color: #fcfcfc;">Beranda</a> | <a href="proyek.php" style="color: #fcfcfc;">Proyek</a>
+          Halaman: <strong>Kontak</strong> &bull; Navigasi: <a href="/" style="color: #fcfcfc;">Beranda</a> | <a href="/proyek" style="color: #fcfcfc;">Proyek</a>
         </div>
       </div>
     </footer>

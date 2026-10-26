@@ -32,7 +32,8 @@ function loadEnv(string $filePath): void {
     }
 }
 
-// Muat otomatis berkas .env jika tersedia
+// Muat otomatis berkas .env jika tersedia (di folder root atau api)
+loadEnv(__DIR__ . '/../.env');
 loadEnv(__DIR__ . '/.env');
 
 define('SUPABASE_URL', getenv('SUPABASE_URL') ?: ($_ENV['SUPABASE_URL'] ?? ''));

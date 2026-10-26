@@ -6,7 +6,7 @@
   <title>Raya Mahardika Ibrahim — Proyek &amp; Riwayat</title>
   
   <!-- CSS Eksternal -->
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="/style.css" />
 
   <!-- CSS Internal (Khusus Halaman Proyek & Tabel: Apple Liquid Glass) -->
   <style>
@@ -112,14 +112,14 @@
     <!-- Header & Navigasi Antar Halaman (HTML5 Semantic) -->
     <header class="navbar">
       <div class="nav-container">
-        <a href="index.php" class="brand">
+        <a href="/" class="brand">
           <span class="brand-title">Raya Mahardika</span>
           <span class="brand-subtitle">/ portofolio</span>
         </a>
         <nav class="nav-links">
-          <a href="index.php" class="nav-item">Beranda</a>
-          <a href="proyek.php" class="nav-item active">Proyek &amp; Riwayat</a>
-          <a href="kontak.php" class="nav-item">Kontak</a>
+          <a href="/" class="nav-item">Beranda</a>
+          <a href="/proyek" class="nav-item active">Proyek &amp; Riwayat</a>
+          <a href="/kontak" class="nav-item">Kontak</a>
         </nav>
       </div>
     </header>
@@ -289,7 +289,7 @@
         <p style="color: #d1d5db; font-size: 0.925rem; max-width: 550px; margin: 0 auto 24px auto; line-height: 1.6;">
           Silakan kirimkan pesan, pertanyaan, atau tawaran kerja sama melalui formulir kontak kami.
         </p>
-        <a href="kontak.php" class="btn btn-primary">
+        <a href="/kontak" class="btn btn-primary">
           <span>Menuju Formulir Kontak &rarr;</span>
         </a>
       </section>
@@ -303,7 +303,7 @@
           &copy; <?= date('Y') ?> Raya Mahardika Ibrahim. All rights reserved.
         </div>
         <div class="tech-text">
-          Halaman: <strong>Proyek &amp; Riwayat</strong> &bull; Navigasi: <a href="index.php" style="color: #fcfcfc;">Beranda</a> | <a href="kontak.php" style="color: #fcfcfc;">Kontak</a>
+          Halaman: <strong>Proyek &amp; Riwayat</strong> &bull; Navigasi: <a href="/" style="color: #fcfcfc;">Beranda</a> | <a href="/kontak" style="color: #fcfcfc;">Kontak</a>
         </div>
       </div>
     </footer>
