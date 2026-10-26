@@ -792,7 +792,7 @@
   <footer class="border-t border-apple-borderSubtle mt-24 py-8 bg-apple-canvas/80 backdrop-blur-xl">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-palette-silver">
       <div class="text-center sm:text-left">
-        &copy; 2026 <strong class="text-palette-light">Raya Mahardika Ibrahim</strong>. All rights reserved.
+        &copy; <?= date('Y') ?> <strong class="text-palette-light">Raya Mahardika Ibrahim</strong>. All rights reserved.
       </div>
       <div class="text-center sm:text-right font-mono text-[11px] text-palette-charcoal">
         Theme: <span class="text-palette-light">Apple Liquid Glass</span> &times; <span class="text-palette-silver">Android Monet Monochrome</span> &bull; Framework: <span class="text-palette-light">Tailwind CSS</span>

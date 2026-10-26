@@ -151,14 +151,14 @@
     <!-- Header & Navigasi Antar Halaman (HTML5 Semantic) -->
     <header class="navbar">
       <div class="nav-container">
-        <a href="index.html" class="brand">
+        <a href="index.php" class="brand">
           <span class="brand-title">Raya Mahardika</span>
           <span class="brand-subtitle">/ portofolio</span>
         </a>
         <nav class="nav-links">
-          <a href="index.html" class="nav-item">Beranda</a>
-          <a href="proyek.html" class="nav-item">Proyek &amp; Riwayat</a>
-          <a href="kontak.html" class="nav-item active">Kontak</a>
+          <a href="index.php" class="nav-item">Beranda</a>
+          <a href="proyek.php" class="nav-item">Proyek &amp; Riwayat</a>
+          <a href="kontak.php" class="nav-item active">Kontak</a>
         </nav>
       </div>
     </header>
@@ -380,10 +380,10 @@
       <div class="divider"></div>
       <div class="copyright-row">
         <div class="copyright-text">
-          &copy; <span id="current-year">2026</span> Raya Mahardika Ibrahim. All rights reserved.
+          &copy; <?= date('Y') ?> Raya Mahardika Ibrahim. All rights reserved.
         </div>
         <div class="tech-text">
-          Halaman: <strong>Kontak</strong> &bull; Navigasi: <a href="index.html" style="color: #fcfcfc;">Beranda</a> | <a href="proyek.html" style="color: #fcfcfc;">Proyek</a>
+          Halaman: <strong>Kontak</strong> &bull; Navigasi: <a href="index.php" style="color: #fcfcfc;">Beranda</a> | <a href="proyek.php" style="color: #fcfcfc;">Proyek</a>
         </div>
       </div>
     </footer>
