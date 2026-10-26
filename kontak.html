@@ -8,7 +8,6 @@
   <!-- CSS Eksternal -->
   <link rel="stylesheet" href="style.css" />
 
-  <!-- CSS Internal (Khusus Halaman Formulir Kontak) -->
   <!-- CSS Internal (Khusus Halaman Formulir Kontak: Apple Liquid Glass) -->
   <style>
     /* Styling Internal: Khusus Elemen Form dan Input Bergaya Apple Liquid Glass */
@@ -132,16 +131,6 @@
       cursor: pointer;
     }
 
-    .info-card {
-      background: #111215;
-      border: 1px solid #1f2228;
-      border-radius: 16px;
-      padding: 32px;
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
-
     @media (max-width: 860px) {
       .contact-layout {
         grid-template-columns: 1fr;
@@ -198,45 +187,45 @@
           </div>
 
           <!-- Elemen Image Avatar Miniatura -->
-          <div style="display: flex; align-items: center; gap: 16px; padding: 16px; background: #18181b; border-radius: 10px; border: 1px solid #27272a;">
+          <div style="display: flex; align-items: center; gap: 16px; padding: 16px; background: rgba(255, 255, 255, 0.03); border-radius: 14px; border: 1px solid rgba(255, 255, 255, 0.1);">
             <img 
               src="avatar.png" 
               alt="Avatar Raya" 
               width="60" 
               height="60" 
-              style="border-radius: 50%; border: 2px solid #38bdf8;"
+              style="border-radius: 50%; border: 2px solid rgba(255, 255, 255, 0.2);"
             />
             <div>
-              <strong style="color: #ffffff; font-size: 0.95rem; display: block;">Raya Mahardika Ibrahim</strong>
-              <span style="color: #38bdf8; font-size: 0.775rem;">Jakarta, DKI Jakarta, ID</span>
+              <strong style="color: #fcfcfc; font-size: 0.95rem; display: block;">Raya Mahardika Ibrahim</strong>
+              <span style="color: #ababab; font-size: 0.775rem;">Jakarta, DKI Jakarta, ID</span>
             </div>
           </div>
 
           <!-- Elemen List: Kontak Cepat (<ul>) & Link (<a>) -->
           <div>
-            <h3 style="color: #ffffff; font-size: 0.9rem; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em;">Detail Saluran:</h3>
+            <h3 style="color: #fcfcfc; font-size: 0.9rem; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em;">Detail Saluran:</h3>
             <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 14px; font-size: 0.875rem;">
               <li style="display: flex; gap: 10px;">
-                <span style="color: #71717a; width: 80px;">Email:</span>
-                <a href="mailto:rayamahardikaibrahim@gmail.com" style="color: #38bdf8; text-decoration: underline;">
+                <span style="color: #ababab; width: 80px;">Email:</span>
+                <a href="mailto:rayamahardikaibrahim@gmail.com" style="color: #fcfcfc; text-decoration: underline;">
                   rayamahardikaibrahim@gmail.com
                 </a>
               </li>
               <li style="display: flex; gap: 10px;">
-                <span style="color: #71717a; width: 80px;">GitHub:</span>
-                <a href="https://github.com/rktdnt" target="_blank" rel="noopener noreferrer" style="color: #ffffff; text-decoration: underline;">
+                <span style="color: #ababab; width: 80px;">GitHub:</span>
+                <a href="https://github.com/rktdnt" target="_blank" rel="noopener noreferrer" style="color: #fcfcfc; text-decoration: underline;">
                   github.com/rktdnt
                 </a>
               </li>
               <li style="display: flex; gap: 10px;">
-                <span style="color: #71717a; width: 80px;">LinkedIn:</span>
-                <a href="https://linkedin.com/in/raya-mahardika-57bb10326" target="_blank" rel="noopener noreferrer" style="color: #a78bfa; text-decoration: underline;">
+                <span style="color: #ababab; width: 80px;">LinkedIn:</span>
+                <a href="https://linkedin.com/in/raya-mahardika-57bb10326" target="_blank" rel="noopener noreferrer" style="color: #fcfcfc; text-decoration: underline;">
                   in/raya-mahardika-57bb10326
                 </a>
               </li>
               <li style="display: flex; gap: 10px;">
-                <span style="color: #71717a; width: 80px;">Situs:</span>
-                <a href="https://rypl.my.id" target="_blank" rel="noopener noreferrer" style="color: #10b981; text-decoration: underline;">
+                <span style="color: #ababab; width: 80px;">Situs:</span>
+                <a href="https://rypl.my.id" target="_blank" rel="noopener noreferrer" style="color: #fcfcfc; text-decoration: underline;">
                   https://rypl.my.id
                 </a>
               </li>
@@ -244,11 +233,11 @@
           </div>
 
           <!-- CSS Inline Contoh 4: Box catatan ketersediaan -->
-          <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.3); padding: 14px; border-radius: 8px;">
-            <span style="color: #10b981; font-size: 0.8rem; font-weight: 600; display: block; margin-bottom: 4px;">
+          <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.15); padding: 14px; border-radius: 12px;">
+            <span style="color: #fcfcfc; font-size: 0.8rem; font-weight: 600; display: block; margin-bottom: 4px;">
               ● Status Kerja:
             </span>
-            <p style="color: #a1a1aa; font-size: 0.8rem; margin: 0;">
+            <p style="color: #ababab; font-size: 0.8rem; margin: 0;">
               Terbuka untuk proyek paruh waktu (Freelance), riset kolaboratif, serta magang di bidang Backend Engineering.
             </p>
           </div>
@@ -394,13 +383,12 @@
           &copy; <span id="current-year">2026</span> Raya Mahardika Ibrahim. All rights reserved.
         </div>
         <div class="tech-text">
-          Halaman: <strong>Kontak</strong> &bull; Navigasi: <a href="index.html" style="color: #38bdf8;">Beranda</a> | <a href="proyek.html" style="color: #38bdf8;">Proyek</a>
+          Halaman: <strong>Kontak</strong> &bull; Navigasi: <a href="index.html" style="color: #fcfcfc;">Beranda</a> | <a href="proyek.html" style="color: #fcfcfc;">Proyek</a>
         </div>
       </div>
     </footer>
   </div>
 
-  <script src="script.js"></script>
   <script>
     // Handler sederhana pengiriman form untuk memberikan feedback interaktif
     function handleFormSubmit(event) {
