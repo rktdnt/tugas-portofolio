@@ -8,6 +8,7 @@
   "routes": [
     { "src": "/style.css", "dest": "/style.css" },
     { "src": "/avatar.png", "dest": "/avatar.png" },
+    { "src": "/admin(\\.php)?", "dest": "/api/admin.php" },
     { "src": "/kontak(\\.php)?", "dest": "/api/kontak.php" },
     { "src": "/proyek(\\.php)?", "dest": "/api/proyek.php" },
     { "src": "/(index(\\.php)?)?", "dest": "/api/index.php" }

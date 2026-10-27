@@ -12,7 +12,9 @@ if ($uri !== '/' && file_exists(__DIR__ . $uri)) {
 }
 
 // Routing URL bersih ke folder api/
-if ($uri === '/kontak' || $uri === '/kontak.php') {
+if ($uri === '/admin' || $uri === '/admin.php') {
+    require __DIR__ . '/api/admin.php';
+} elseif ($uri === '/kontak' || $uri === '/kontak.php') {
     require __DIR__ . '/api/kontak.php';
 } elseif ($uri === '/proyek' || $uri === '/proyek.php') {
     require __DIR__ . '/api/proyek.php';

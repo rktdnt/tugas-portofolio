@@ -38,7 +38,11 @@ loadEnv(__DIR__ . '/.env');
 
 define('SUPABASE_URL', getenv('SUPABASE_URL') ?: ($_ENV['SUPABASE_URL'] ?? ''));
 define('SUPABASE_KEY', getenv('SUPABASE_KEY') ?: ($_ENV['SUPABASE_KEY'] ?? ''));
+define('SUPABASE_ADMIN_KEY', getenv('SUPABASE_SERVICE_KEY') ?: ($_ENV['SUPABASE_SERVICE_KEY'] ?? SUPABASE_KEY));
 define('SUPABASE_TABLE', 'pesan_kontak');
+
+// Kredensial Akses Admin Dashboard
+define('ADMIN_PASSWORD', getenv('ADMIN_PASSWORD') ?: ($_ENV['ADMIN_PASSWORD'] ?? 'admin123'));
 
 /**
  * Validasi dan kirim data formulir kontak ke Supabase melalui REST API PostgREST.
@@ -138,4 +142,105 @@ function simpanPesanKontak(array $input): array {
     }
 
     return ['success' => false, 'message' => 'Supabase error (' . $httpCode . '): ' . $detailMsg];
+}
+
+/**
+ * Mengambil seluruh data pesan kontak dari Supabase (terurut dari terbaru).
+ */
+function ambilSemuaPesanKontak(): array {
+    if (
+        empty(SUPABASE_URL) || 
+        empty(SUPABASE_ADMIN_KEY) || 
+        strpos(SUPABASE_URL, 'YOUR_PROJECT_REF') !== false
+    ) {
+        return [
+            'success' => false,
+            'data' => [],
+            'message' => 'Konfigurasi Supabase belum diatur di berkas .env'
+        ];
+    }
+
+    $endpoint = rtrim(SUPABASE_URL, '/') . '/rest/v1/' . SUPABASE_TABLE . '?select=*&order=created_at.desc';
+
+    $ch = curl_init($endpoint);
+    curl_setopt_array($ch, [
+        CURLOPT_HTTPGET => true,
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_TIMEOUT => 10,
+        CURLOPT_HTTPHEADER => [
+            'Content-Type: application/json',
+            'apikey: ' . SUPABASE_ADMIN_KEY,
+            'Authorization: Bearer ' . SUPABASE_ADMIN_KEY,
+        ],
+    ]);
+
+    $response = curl_exec($ch);
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    $curlError = curl_error($ch);
+    curl_close($ch);
+
+    if ($curlError) {
+        return ['success' => false, 'data' => [], 'message' => 'Gagal koneksi ke Supabase: ' . $curlError];
+    }
+
+    if ($httpCode >= 200 && $httpCode < 300) {
+        $rows = json_decode($response, true);
+        return [
+            'success' => true,
+            'data' => is_array($rows) ? $rows : [],
+            'message' => 'Data berhasil dimuat.'
+        ];
+    }
+
+    $errorData = json_decode($response, true);
+    $detailMsg = $errorData['message'] ?? $response ?? 'Kode status HTTP ' . $httpCode;
+    return ['success' => false, 'data' => [], 'message' => 'Supabase error (' . $httpCode . '): ' . $detailMsg];
+}
+
+/**
+ * Menghapus pesan kontak berdasarkan ID dari Supabase.
+ */
+function hapusPesanKontak(int $id): array {
+    if ($id <= 0) {
+        return ['success' => false, 'message' => 'ID pesan tidak valid.'];
+    }
+
+    if (
+        empty(SUPABASE_URL) || 
+        empty(SUPABASE_ADMIN_KEY) || 
+        strpos(SUPABASE_URL, 'YOUR_PROJECT_REF') !== false
+    ) {
+        return ['success' => false, 'message' => 'Konfigurasi Supabase belum diatur di berkas .env'];
+    }
+
+    $endpoint = rtrim(SUPABASE_URL, '/') . '/rest/v1/' . SUPABASE_TABLE . '?id=eq.' . $id;
+
+    $ch = curl_init($endpoint);
+    curl_setopt_array($ch, [
+        CURLOPT_CUSTOMREQUEST => 'DELETE',
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_TIMEOUT => 10,
+        CURLOPT_HTTPHEADER => [
+            'Content-Type: application/json',
+            'apikey: ' . SUPABASE_ADMIN_KEY,
+            'Authorization: Bearer ' . SUPABASE_ADMIN_KEY,
+        ],
+    ]);
+
+    $response = curl_exec($ch);
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    $curlError = curl_error($ch);
+    curl_close($ch);
+
+    if ($curlError) {
+        return ['success' => false, 'message' => 'Gagal menghapus pesan: ' . $curlError];
+    }
+
+    if ($httpCode >= 200 && $httpCode < 300) {
+        return ['success' => true, 'message' => 'Pesan #' . $id . ' berhasil dihapus.'];
+    }
+
+    $errorData = json_decode($response, true);
+    $detailMsg = $errorData['message'] ?? $response ?? 'Kode status HTTP ' . $httpCode;
+    return ['success' => false, 'message' => 'Gagal menghapus (' . $httpCode . '): ' . $detailMsg];
 }

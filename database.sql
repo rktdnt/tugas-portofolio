@@ -22,16 +22,23 @@ CREATE TABLE IF NOT EXISTS public.pesan_kontak (
 -- 2. Aktifkan Row Level Security (RLS)
 ALTER TABLE public.pesan_kontak ENABLE ROW LEVEL SECURITY;
 
--- 3. Beri izin INSERT untuk publik (role 'anon') agar form dapat mengirim pesan
+-- 3. Beri izin INSERT untuk publik (role 'anon') agar formulir dapat mengirim pesan
 CREATE POLICY "Izinkan publik mengirim pesan kontak"
 ON public.pesan_kontak
 FOR INSERT
 TO anon
 WITH CHECK (true);
 
--- 4. Beri izin SELECT hanya untuk admin / dashboard terautentikasi (role 'authenticated')
-CREATE POLICY "Hanya pemilik akun yang dapat membaca pesan"
+-- 4. Beri izin SELECT & DELETE untuk membaca serta menghapus pesan dari Admin Dashboard
+-- (Jika Anda menggunakan anon key di .env; jika memakai service_role key, policy ini opsional).
+CREATE POLICY "Izinkan admin membaca pesan kontak"
 ON public.pesan_kontak
 FOR SELECT
-TO authenticated
+TO anon
+USING (true);
+
+CREATE POLICY "Izinkan admin menghapus pesan kontak"
+ON public.pesan_kontak
+FOR DELETE
+TO anon
 USING (true);
