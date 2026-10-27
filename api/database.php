@@ -109,7 +109,6 @@ function simpanPesanKontak(array $input): array {
     $response = curl_exec($ch);
     $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     $curlError = curl_error($ch);
-    curl_close($ch);
 
     // 4. Periksa Hasil cURL & Kode Status HTTP
     if ($curlError) {
@@ -177,7 +176,6 @@ function ambilSemuaPesanKontak(): array {
     $response = curl_exec($ch);
     $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     $curlError = curl_error($ch);
-    curl_close($ch);
 
     if ($curlError) {
         return ['success' => false, 'data' => [], 'message' => 'Gagal koneksi ke Supabase: ' . $curlError];
@@ -230,7 +228,6 @@ function hapusPesanKontak(int $id): array {
     $response = curl_exec($ch);
     $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     $curlError = curl_error($ch);
-    curl_close($ch);
 
     if ($curlError) {
         return ['success' => false, 'message' => 'Gagal menghapus pesan: ' . $curlError];
